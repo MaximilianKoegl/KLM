@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 from PyQt5 import uic, QtWidgets, QtCore, QtGui
 
 
@@ -30,13 +31,15 @@ class Calculator(QtWidgets.QDialog):
 
         else:
             self.stop_measurement()
-            self.logger(["Button clicked", device, str(self.stop_measurement()), button])
+            self.logger(["Button clicked", device, str(self.stop_measurement()), repr(button).replace("'","")])
 
     def logger(self, data):
         text = ""
         for items in data:
             text += str(items)+","
-        text += QtCore.QDateTime.currentDateTime().toString(QtCore.Qt.ISODate)
+        text += str(datetime.now())
+        with open("results_changing.txt", "a") as myfile:
+                myfile.write(text+"\n")
         print(text)
 
     def handle_input(self, input_text):

@@ -1,0 +1,34 @@
+Mouse started moving,m,0,,2019-06-10 11:06:38.546891
+Mouse moved,m,598,1,2019-06-10 11:06:39.144046
+Button clicked,m,24,1,2019-06-10 11:06:39.167331
+Button clicked,k,52,+,2019-06-10 11:06:40.585958
+Button clicked,m,41,1,2019-06-10 11:06:42.350970
+Mouse started moving,m,0,,2019-06-10 11:06:43.489990
+Mouse moved,m,1015,=,2019-06-10 11:06:44.504734
+Button clicked,m,65,=,2019-06-10 11:06:44.569655
+Mouse started moving,m,0,,2019-06-10 11:06:59.746308
+Mouse moved,m,902,2,2019-06-10 11:07:00.648654
+Button clicked,m,31,2,2019-06-10 11:07:00.679255
+Button clicked,k,79,3,2019-06-10 11:07:02.241152
+Mouse started moving,m,0,,2019-06-10 11:07:02.682364
+Mouse moved,m,1742,+,2019-06-10 11:07:04.424363
+Button clicked,m,31,+,2019-06-10 11:07:04.455979
+Button clicked,k,75,2,2019-06-10 11:07:05.612488
+Mouse started moving,m,0,,2019-06-10 11:07:06.706453
+Mouse moved,m,813,4,2019-06-10 11:07:07.519838
+Button clicked,m,38,4,2019-06-10 11:07:07.557189
+Mouse started moving,m,0,,2019-06-10 11:07:08.954490
+Mouse moved,m,573,=,2019-06-10 11:07:09.527650
+Button clicked,m,48,=,2019-06-10 11:07:09.575228
+Mouse started moving,m,0,,2019-06-10 11:07:14.114532
+Mouse moved,m,685,1,2019-06-10 11:07:14.799596
+Button clicked,m,40,1,2019-06-10 11:07:14.840012
+Button clicked,k,72,8,2019-06-10 11:07:16.059155
+Mouse started moving,m,0,,2019-06-10 11:07:17.490582
+Mouse moved,m,678,*,2019-06-10 11:07:18.168040
+Button clicked,m,59,*,2019-06-10 11:07:18.226249
+Button clicked,k,65,7,2019-06-10 11:07:19.449002
+Mouse started moving,m,0,,2019-06-10 11:07:20.314643
+Mouse moved,m,534,=,2019-06-10 11:07:20.848637
+Button clicked,m,39,=,2019-06-10 11:07:20.887379
+Mouse started moving,m,0,,2019-06-10 11:07:25.234656
