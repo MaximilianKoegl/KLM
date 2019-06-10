@@ -8,31 +8,37 @@ class Calculator(QtWidgets.QDialog):
 
     def __init__(self):
         super().__init__()
+        self.setMouseTracking(True)
         self.ui = uic.loadUi("calculator.ui", self)
         self.show()
         self.init_buttons()
         self.timer = QtCore.QTime()
+        self.mouse_timer = QtCore.QTime()
+        self.moving = False
 
     # connect keyboard- and button-input with listener
     def init_buttons(self):
         self.ui.new_input.connect(self.handle_input)
-        self.ui.timer_logger.connect(self.logging_timer)
+        self.ui.timer_logger.connect(self.click_timer)
         for button in self.numbers.children():
             button.pressed.connect(self.button_clicked(button.text()))
             button.released.connect(self.button_released(button.text()))
 
-    def logging_timer(self, ev, device, button):
+    def click_timer(self, ev, device, button):
         if ev:
             self.start_measurement()
 
         else:
             self.stop_measurement()
-            print('Button clicked,'+device+","+button+","+ str(self.stop_measurement()))
+            self.logger(["Button clicked", device, str(self.stop_measurement())])
+
+    def logger(self, data):
+        print(data[0]+',' + data[1]+"," + data[2])
 
     def handle_input(self, input_text):
         text = self.input.toPlainText()
 
-        if input_text == "REMOVE":
+        if input_text == "DEL":
             text = text[:-1]
         elif input_text == "=":
             try:
@@ -52,6 +58,16 @@ class Calculator(QtWidgets.QDialog):
     def stop_measurement(self):
         return self.timer.elapsed()
 
+    def start_mouse_measurement(self):
+        if not self.moving:
+            self.mouse_timer.start()
+            self.moving = True
+
+    def stop_mouse_measurement(self):
+        if self.moving:
+            self.logger(["Mouse moved", "m", str(self.mouse_timer.elapsed())])
+            self.moving = False
+
     def keyReleaseEvent(self, event):
         self.ui.timer_logger.emit(False, "k", event.text())
 
@@ -66,12 +82,17 @@ class Calculator(QtWidgets.QDialog):
         def clicked():
             self.ui.timer_logger.emit(True, "m", button_text)
             self.ui.new_input.emit(button_text)
+            self.stop_mouse_measurement()
         return clicked
 
     def button_released(self, button_text):
         def released():
             self.ui.timer_logger.emit(False, "m", button_text)
         return released
+    
+    def mouseMoveEvent(self, event):
+        self.start_mouse_measurement()
+
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
