@@ -4,6 +4,7 @@
 # KLM Calculator Application
 import sys
 
+# Standard KLM Values
 standardValues = {
     "k" : 0.28,
     "p" : 1.1,
@@ -12,6 +13,7 @@ standardValues = {
     "h" : 0.4
 }
 
+# Building a string that contains all no-comment characters of the input file
 def getOperatorString():
     operatorString = ""
     try:
@@ -23,14 +25,16 @@ def getOperatorString():
                     break
                 else:
                     operatorString += character
-        return operatorString.replace(" ","").lower()
+        return operatorString.replace(" ","").replace("\n","").lower()
     except IndexError:
         print("define a filename as argument");
 
+#Computing duration based on the given character/value pairs
 def getDuration(operatorString, values):
     duration = 0.0
     digit = ""
     for character in operatorString:
+        # determine if multiplier is present
         if character.isdigit():
             digit += character
         else:
@@ -40,19 +44,15 @@ def getDuration(operatorString, values):
                 else:
                     duration += int(digit) * values[character]
                     digit = ""
-            except IndexError:
-                print("illegal character " + character + " in input file")
+            except KeyError:
+                print("ignoring illegal character '" + character + "' in input file...")
                 pass
     return duration
 
-                
-            
-        
-
+# Compute duration
 operatorString = getOperatorString()
-
 duration = getDuration(operatorString, standardValues)
 
+# Print out results
 print(operatorString)
-
 print(duration)
