@@ -38,8 +38,6 @@ class Calculator(QtWidgets.QDialog):
         for items in data:
             text += str(items)+","
         text += str(datetime.now())
-        with open("results_changing.txt", "a") as myfile:
-                myfile.write(text+"\n")
         print(text)
 
     def handle_input(self, input_text):
