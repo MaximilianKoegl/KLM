@@ -30,10 +30,14 @@ class Calculator(QtWidgets.QDialog):
 
         else:
             self.stop_measurement()
-            self.logger(["Button clicked", device, str(self.stop_measurement())])
+            self.logger(["Button clicked", device, str(self.stop_measurement()), button])
 
     def logger(self, data):
-        print(data[0]+',' + data[1]+"," + data[2])
+        text = ""
+        for items in data:
+            text += str(items)+","
+        text += QtCore.QDateTime.currentDateTime().toString(QtCore.Qt.ISODate)
+        print(text)
 
     def handle_input(self, input_text):
         text = self.input.toPlainText()
@@ -62,10 +66,11 @@ class Calculator(QtWidgets.QDialog):
         if not self.moving:
             self.mouse_timer.start()
             self.moving = True
+            self.logger(["Mouse started moving", "m", 0, ""])
 
-    def stop_mouse_measurement(self):
+    def stop_mouse_measurement(self, text):
         if self.moving:
-            self.logger(["Mouse moved", "m", str(self.mouse_timer.elapsed())])
+            self.logger(["Mouse moved", "m", str(self.mouse_timer.elapsed()), text])
             self.moving = False
 
     def keyReleaseEvent(self, event):
@@ -82,7 +87,7 @@ class Calculator(QtWidgets.QDialog):
         def clicked():
             self.ui.timer_logger.emit(True, "m", button_text)
             self.ui.new_input.emit(button_text)
-            self.stop_mouse_measurement()
+            self.stop_mouse_measurement(button_text)
         return clicked
 
     def button_released(self, button_text):
