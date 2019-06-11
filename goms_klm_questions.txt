@@ -1,20 +1,20 @@
 1a)
-According to Wayne D. Gray et al.[1] the critical path method is an useful extension for the GOMS model to get a better overview over the parallelism and the dependencies between the analyzed tasks.
-When examining the duration of a human-computer interaction with GOMS this method is used to create a work breakdown structure in a schedule chart where all tasks and their durations are collected.
-Then, the critical path and the total duration can be easyly computed by looking at the activities that take the longest.
-When the tasks on the critical path are identified the developers can adress these tasks when improving e.g. an user interface.
+According to Wayne D. Gray et al.[1] the critical path method is a useful extension for the GOMS model to get a better overview of the parallelism and the dependencies between the analyzed tasks.
+When examining the duration of human-computer interaction with GOMS this method is used to create a work breakdown structure in a schedule chart where all tasks and their durations are collected.
+Then, the critical path and the total duration can be easily computed by looking at the activities that take the longest.
+When the tasks on the critical path are identified the developers can address these tasks when improving e.g. a user interface.
 Summarized the critical path helps to get a better view on the dependencies of tasks and bring out the complexity of task sequences in hci where hardware, software and user interact with each other.
 
-[1] Gray, John, Atwood (1992): “The precis of Project Ernestine or an overview of a validation of GOMS”
+[1] Gray, John, Atwood (1992): “The precis of Project Ernestine or an overview of validation of GOMS”
 
 
 1b)
-According to Kieras [2] the Keystroke-Level breaks down the user taks to the keystroke level.
+According to Kieras [2], the Keystroke-Level breaks down the user tasks to the keystroke level.
 Therefore the model defines typical durations for physical interaction like pressing a key.
 The problem with this model is that it can not automatically be adapted to other hardware than a usual desktop computer.
 A notebook has a different mouse interaction technique because a touchpad is used.
-On one hand the duration to point with mouse on a target could be different than the estimated 1.1 seconds.
-On the other hand switching between keyboard and mouse could be shorter because the tocuhpad is placed next to the keyboard and closer to the hands of the user.
+On one hand, the duration to pointing with a mouse on a target could be different than the estimated 1.1 seconds.
+On the other hand switching between keyboard and mouse could be shorter because the touchpad is placed next to the keyboard and closer to the hands of the user.
 To use the KLM for notebooks these estimations has to be adapted.
 
 [2] Kieras (2001): “Using the Keystroke-Level Model to Estimate Execution Times”
