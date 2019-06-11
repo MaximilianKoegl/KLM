@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>475</width>
-    <height>636</height>
+    <width>455</width>
+    <height>835</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -22,9 +22,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>461</width>
+     <x>0</x>
+     <y>270</y>
+     <width>451</width>
      <height>561</height>
     </rect>
    </property>
@@ -434,10 +434,10 @@
   <widget class="QTextEdit" name="input">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>9</y>
      <width>451</width>
-     <height>81</height>
+     <height>281</height>
     </rect>
    </property>
    <property name="font">
